@@ -1,0 +1,167 @@
+:root {
+    touch-action: pan-x pan-y;
+    height: 100vh;
+}
+
+@font-face {
+    font-family: "cinemafont";
+    src: url(~/assets/font/cinema-font.ttf);
+}
+:root , body{
+    height: 100vh;
+    width: 100vw;
+}
+:root,
+body,
+:before,
+:after,
+input {
+    font-family: "cinemafont";
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(41, 41, 41);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+/* we will explain what these classes do next! */
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+body>div {
+    width: 381px;
+    margin: 0 auto;
+
+}
+
+#board {
+    /* background-color: green; */
+    background-image: url("~/assets/img/game-bg.svg");
+    /* height: 99.98vh; */
+}
+
+#board.hidden {
+    display: none;
+
+}
+.ml-1{
+    margin-left: 4px;
+}
+.mr-1{
+    margin-right: 4px;
+}
+.mr-1-2{
+margin-right: 2px;
+}
+.w-4{
+    width: 16px;
+}
+.inline-block{
+    display: inline-block;
+
+}
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container {
+    width: 100%;
+    box-sizing: border-box;
+    direction: rtl;
+    background-color: black;
+    background-image: url(~/assets/img/main-bg.svg);
+    background-origin: border-box;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 308px;
+    padding-bottom: 107px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /* height: calc(100vh - 405px); */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+
+    /* 405 is 308+107px */
+}
+.modal-container#losted_game_modal{
+    padding-top: 146px;
+    padding-bottom: 50px;
+    /* height: calc(100vh - 196px); */
+
+
+}
+.modal-container.hidden {
+    display: none;
+}
+
+.start_game_container {
+    direction: rtl;
+}
+
+.start-game-btn {
+    position: relative;
+    width: 219px;
+    cursor: pointer;
+    filter: grayscale(1);
+    opacity: 0.5;
+    margin-top: 8px;
+
+}
+
+.losted-text{
+    margin-bottom: 8px;
+font-size: 54px;
+color: #F94842;
+text-align: center;
+}
+.start-game-btn.remove-gray {
+    opacity: 1;
+
+    filter: grayscale(0);
+}
+.my-1{
+    margin-top:4px ;
+    margin-bottom:4px ;
+
+}
+.mt-1{
+    margin-top:4px ;
+
+}
+.text-right{
+    text-align: right;
+}
