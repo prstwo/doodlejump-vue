@@ -30,7 +30,7 @@ After Creating a DataBase, create a table with following schema:
       required: true,
     }
 ```
-Then create a .env file in the root of your project abd type  the local address of your running mongoDb. for example 
+Then create a .env file in the root of your project, type the local address of your running mongoDb. for example 
 
 ```bash
 #.env file
