@@ -111,7 +111,7 @@ bun run preview
 
 ## PREVIEW
 
-![Doodle Jump GIF](https://raw.githubusercontent.com/prstwo/doodlejump-vue/main/assets/gif/doodle-preview-gif.mp4)
+![Doodle Jump GIF](https://raw.githubusercontent.com/prstwo/doodlejump-vue/main/assets/gif/doodle-capture-one.png)
 
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
