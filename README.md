@@ -1,3 +1,13 @@
+
+## PREVIEW
+
+![Doodle Jump PNG](https://raw.githubusercontent.com/prstwo/doodlejump-vue/main/assets/preview/doodle-capture-one.PNG) 
+
+![Doodle Jump PNG](https://raw.githubusercontent.com/prstwo/doodlejump-vue/main/assets/preview/doodle-capture-two.PNG)
+
+![Doodle Jump PNG](https://raw.githubusercontent.com/prstwo/doodlejump-vue/main/assets/preview/doodle-capture-three.PNG)
+
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
@@ -108,10 +118,6 @@ yarn preview
 # bun
 bun run preview
 ```
-
-## PREVIEW
-
-![Doodle Jump GIF](https://raw.githubusercontent.com/prstwo/doodlejump-vue/main/assets/gif/doodle-capture-one.png)
 
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
