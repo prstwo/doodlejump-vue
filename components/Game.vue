@@ -1,7 +1,6 @@
 <script setup>
 //board
-// import DoodleRight from "~/assets/img/doodler-right.png";
-// import DoodleLeft from "~/assets/img/doodler-left.png";
+
 import DoodleRight from "~/assets/img/watermelon-icon-right.svg";
 import DoodleLeft from "~/assets/img/watermelon-icon-left.svg";
 import PlatformImg from "~/assets/img/basket-platform.svg";
@@ -47,16 +46,10 @@ let maxScore = 0;
 let gameOver = false;
 
 onMounted(() => {
-  //   startGameContainer = document.getElementById("start_game_container");
-  //   loseGameContainer = document.getElementById("losted_game_modal");
-  //   board = document.getElementById("board");
   board.value.height = boardHeight;
   board.value.width = boardWidth;
   context = board.value.getContext("2d"); //used for drawing on the board
 
-  //draw doodler
-  // context.fillStyle = "green";
-  // context.fillRect(doodler.x, doodler.y, doodler.width, doodler.height);
 
   //load images
   doodlerRightImg = new Image();
@@ -90,14 +83,7 @@ function startGame() {
   requestAnimationFrame(update);
   document.addEventListener("keydown", moveDoodler);
   document.addEventListener("touchmove", moveDoodler);
-  // if (window.DeviceOrientationEvent) {
-  //     // alert("supported")
-  //     window.addEventListener('deviceorientation', moveDoodler);
-  // } else {
-  //     // alert('DeviceOrientationEvent not supported on this device');
-  //     window.addEventListener('AbsoluteOrientationSensor', moveDoodler);
 
-  // }
 
   document.addEventListener("keydown", moveDoodler);
   document.addEventListener("touchmove", handleTouchMove);
@@ -124,8 +110,6 @@ function handleTouchMove(e) {
   }
 }
 function startOver() {
-  //   const board = document.getElementById("board");
-
   const spaceEvent = new Event("space");
 
   try {
@@ -259,15 +243,6 @@ function placePlatforms() {
 
   platformArray.push(platform);
 
-  // platform = {
-  //     img : platformImg,
-  //     x : boardWidth/2,
-  //     y : boardHeight - 150,
-  //     width : platformWidth,
-  //     height : platformHeight
-  // }
-  // platformArray.push(platform);
-
   for (let i = 0; i < 7; i++) {
     let randomX = Math.floor((Math.random() * boardWidth * 3) / 4); //(0-1) * boardWidth*3/4
     let platform = {
@@ -315,7 +290,7 @@ async function updateScoreApi(score) {
       if (response.status === 200) {
         emit("changeComponent", 3);
       } else {
-        alert("باختی");
+        alert("You lost");
       }
     },
     onRequestError({ error }) {

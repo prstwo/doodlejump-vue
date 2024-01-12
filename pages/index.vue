@@ -39,7 +39,7 @@ async function setScore(score: number) {
 <template>
   <div class="page-wrapper">
     <img
-      src="~/assets/img/watermelon-bg-with-yalda.png"
+      src="~/assets/img/watermelon-bg.png"
       alt=""
       v-show="componentNumber !== 2 && componentNumber === 1"
       class="top-main-banner"
@@ -64,18 +64,8 @@ async function setScore(score: number) {
       @sendScore="setScore"
     />
 
-    <img
-      src="~/assets/img/main-bg-footer.png"
-      alt=""
-      v-show="componentNumber !== 2 && componentNumber === 1"
-      class="bottom-main-banner"
-    />
-    <img
-      src="~/assets/img/faress-mono-logo.png"
-      alt=""
-      v-show="componentNumber !== 2 && componentNumber === 3"
-      class="bottom-main-banner-lost"
-    />
+
+
   </div>
 </template>
 <style scoped>
@@ -107,19 +97,19 @@ async function setScore(score: number) {
 .top-main-banner,
 .top-main-banner-losted {
   top: -22px;
-  right: 0;
+  left: 0;
 }
 .bottom-main-banner {
   bottom: 0;
-  right: 0;
+  left: 0;
   height: 107px;
 }
 .bottom-main-banner-lost {
   position: absolute;
 
   bottom: 0;
-  right: 50%;
-  transform: translateX(50%);
+  left: 50%;
+  transform: translateX(-50%);
   height: 42px;
 }
 </style>

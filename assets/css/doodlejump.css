@@ -1,11 +1,13 @@
 :root {
     touch-action: pan-x pan-y;
     height: 100vh;
+    --siteRed: #d71920;
+
 }
 
 @font-face {
-    font-family: "cinemafont";
-    src: url(~/assets/font/cinema-font.ttf);
+    font-family: "actionfont";
+    src: url(~/assets/font/Action_Man.ttf);
 }
 :root , body{
     height: 100vh;
@@ -15,11 +17,28 @@
 body,
 :before,
 :after,
-input {
-    font-family: "cinemafont";
+input, button {
+    font-family: "actionfont";
 
     overflow: hidden;
     box-sizing: border-box;
+}
+
+[type=button],
+[type=reset],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
+  -webkit-appearance: initial;
+  -moz-appearance: initial;
+  appearance: initial;
+  background-color: initial;
+  background-image: initial;
+  border: none;
 }
 
 body {
@@ -95,7 +114,7 @@ margin-right: 2px;
 .modal-container {
     width: 100%;
     box-sizing: border-box;
-    direction: rtl;
+    direction: ltr;
     background-color: black;
     background-image: url(~/assets/img/main-bg.svg);
     background-origin: border-box;
@@ -129,29 +148,37 @@ margin-right: 2px;
 }
 
 .start_game_container {
-    direction: rtl;
+    color: var(--siteRed);
 }
 
 .start-game-btn {
+    background-color: var(--siteRed);
     position: relative;
     width: 219px;
     cursor: pointer;
     filter: grayscale(1);
     opacity: 0.5;
+    height: 78px;
     margin-top: 8px;
+    border-radius: 12px;
+    color: white;
+    font-size: 32px;
 
 }
 
 .losted-text{
     margin-bottom: 8px;
 font-size: 54px;
-color: #F94842;
+color: var(--siteRed);
 text-align: center;
 }
 .start-game-btn.remove-gray {
     opacity: 1;
-
+    background-color:var(--siteRed);
     filter: grayscale(0);
+
+    
+
 }
 .my-1{
     margin-top:4px ;
@@ -164,4 +191,7 @@ text-align: center;
 }
 .text-right{
     text-align: right;
+}
+.text-left{
+    text-align: left;
 }

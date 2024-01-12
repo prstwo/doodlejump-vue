@@ -33,7 +33,7 @@ After Creating a DataBase, create a table with following schema:
 Then create a .env file in the root of your project abd type  the local address of your running mongoDb. for example 
 
 ```bash
-.env file
+#.env file
 MONGODB_URI='mongodb://127.0.0.1:27017/doodle'
 
 ```

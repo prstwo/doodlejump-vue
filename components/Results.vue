@@ -45,15 +45,15 @@ onMounted(() => {
 <template>
   <div>
     <div id="losted_game_modal" class="modal-container">
-      <div class="losted-text">باختی!!!</div>
+      <div class="losted-text">You Lost!!!</div>
       <div class="your-points">
-        <span class="your-point-title">امتیاز شما:</span>
+        <span class="your-point-title">Your Points:</span>
         <span>
           {{ usersscore }}
         </span>
       </div>
       <div class="top-five-users" v-if="topThreeUsers">
-        <div class="table-title">جدول امتیاز</div>
+        <div class="table-title">Points Table </div>
 
         <div
           v-for="(user, index) of topThreeUsers"
@@ -61,42 +61,44 @@ onMounted(() => {
           class="top-five-users-item"
         >
           <div>
-            <span class="ml-1 w-4 inline-block"> {{ index + 1 }} - </span>
+            <span class="mr-1 w-4 inline-block"> {{ index + 1 }}- </span>
             <span>
               {{ user.name }}
             </span>
           </div>
           <div>
             <span>{{ user.score }}</span>
-            <span class="mr-1-2"> امتیاز </span>
+            <span class="mr-1-2"> points </span>
           </div>
         </div>
         <div>
-          <div class="text-right mr-1">.</div>
-          <div class="text-right mr-1">.</div>
+          <div class="text-left mr-1">.</div>
+          <div class="text-left mr-1">.</div>
         </div>
         <div v-if="yourLevel && yourLevel > 3" class="top-five-users-item">
           <div>
             <span class="ml-1 w-4 inline-block"> {{ yourLevel }} - </span>
-            <span> شما </span>
+            <span> You </span>
           </div>
           <div>
             <span>{{ usersscore }}</span>
-            <span class="mr-1-2"> امتیاز </span>
+            <span class="mr-1-2"> Points </span>
           </div>
         </div>
-        <div v-show="topFiveError">خطایی در دریافت اطلاعات پیش آمده‌است</div>
+        <div v-show="topFiveError">There is an error fetching data</div>
       </div>
       <div>
         <div>
-          <img
+          <button
             src="~/assets/img/restart-again-red.png"
             alt="start"
             role="submit"
             class="start-game-btn remove-gray"
             @click="emit('changeComponent', 2)"
             id="js_restart_game"
-          />
+          >
+        Play Again !!!
+        </button>
           <!-- <img src="~/assets/img/start-btn-gray.svg" alt="start" role="submit" class="start-game-btn" v-else> -->
           <!-- v-if="userNameEnter && userNameEnter.length > 2 && inputPhone && inputPhone.length === 11" -->
         </div>
@@ -107,7 +109,7 @@ onMounted(() => {
 </template>
 <style scoped>
 .your-point-title {
-  margin-left: 4px;
+  margin-right: 8px;
   padding: 4px auto;
 }
 .your-points {
@@ -118,6 +120,7 @@ onMounted(() => {
 .table-title {
   font-size: 28px;
   text-align: center;
+  margin-bottom: 8px;
 }
 .top-five-users {
   background-image: url(~/assets/img/table-bg.svg);

@@ -11,8 +11,24 @@ const props = defineProps(["showModal"])
       @click="emit('closeModal')"
     >
       <div class="modal-container">
-        <img src="~/assets/img/guide-text.svg" alt="" class="modal-main-pic"/>
-
+        <div class="guide-note">
+          <span>
+            playing with computer:
+          </span> 
+          <span>
+            to be able to play with your computer, just use the left and right keys on the keyboard.
+          </span>
+        </div>
+        <div  class="guide-note">
+          <span>
+            playing with phone:
+          </span> 
+        
+        <span>
+          to be able to play with your computer, just turn your phone left or right or use the left and right keys on the keyboard.
+       
+        </span>
+        </div>
         <img
           src="~/assets/img/close-filled.svg"
           class="modal-main-close"
@@ -43,7 +59,7 @@ const props = defineProps(["showModal"])
   top: 30vh;
   left: 50%;
   transform: translateX(-50%);
-  padding: 2px;
+  padding: 12px;
 }
 .modal-container img.modal-main-pic {
   width: 100%;
@@ -54,5 +70,12 @@ const props = defineProps(["showModal"])
     top: 8px;
     left: 8px;
     cursor: pointer;
+}
+.guide-note{
+  margin-bottom: 1rem;
+}
+.guide-note span:first-child{
+  margin-right: 0.5rem;
+  font-weight: 600;
 }
 </style>

@@ -1,8 +1,6 @@
 <script setup lang="ts">
 const emit = defineEmits(["changeComponent", "toggleNewUser", "sendData"]);
-function checkPersianKeyboard(newName: string) {
-  userNameEnter.value = newName.toString().replace(/[a-zA-Z0-9]/g, "");
-}
+
 // // DOM
 // let startFormCon;
 // let startBtn;
@@ -18,9 +16,7 @@ function toggleModal() {
 function closeModal() {
   showModal.value = false;
 }
-watch(userNameEnter, (newName) => {
-  checkPersianKeyboard(newName);
-});
+
 // send api requests
 async function createUserApi() {
   await $fetch(`/api/users/create`, {
@@ -36,7 +32,7 @@ async function createUserApi() {
       if (response && response.status === 200) {
         emit("changeComponent", 2);
       } else {
-        alert("خطایی پیش آمده است. شماره موبایل تکراری است.");
+        alert("Your phone number is duplicated");
       }
     },
     onRequestError({ error }) {
@@ -97,8 +93,10 @@ function fireSubmit() {
         />
         <input
           type="text"
-          placeholder="اسم (فارسی) "
+          placeholder="Name"
           required
+          pattern="\D"
+          maxlength="20"
           v-model="userNameEnter"
           id="name_input"
         />
@@ -112,18 +110,17 @@ function fireSubmit() {
         />
         <input
           type="tel"
-          placeholder="شماره همراه (مثل 09120000000)"
+          placeholder="Phone"
           pattern="09\d{9}"
           v-model="inputPhone"
           id="tel_input"
           required
-          dir="rtl"
+          dir="ltr"
         />
       </div>
 
       <div>
-        <img
-          src="~/assets/img/start-btn-red.svg"
+        <button
           alt="start"
           role="submit"
           class="start-game-btn"
@@ -143,16 +140,20 @@ function fireSubmit() {
               inputPhone.length === 11
             )
           "
-        />
+        >
+      
+      Let's Go
+      </button>
       </div>
 
-      <div>
+      <div   class="guide-text-toggler"        @click="toggleModal"
+>
         <img
-          @click="toggleModal"
-          src="~/assets/img/guide-icon.svg"
+          src="~/assets/img/taajob-ghermez.svg"
           alt=""
           class="top-main-banner-guide"
         />
+        <span>Guide</span>
       </div>
       <Modal
         :showModal="showModal"
@@ -170,14 +171,15 @@ function fireSubmit() {
 }
 .input-img {
   width: 100%;
+  height: 40px;
 }
 .input-container input {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   background-color: transparent;
-  height: 34.11px;
+  height: 40px;
   appearance: none;
   border: 0;
   padding: 2px 16px;
@@ -187,14 +189,23 @@ function fireSubmit() {
 }
 .input-container input::placeholder {
   color: white;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 .top-main-banner-guide {
-  width: 78px;
+  width:18px;
   height: auto;
   top: 18px;
   left: 18px;
-  margin: 8px auto 0;
+  margin-right: 4px;
+  margin-bottom: 2px;
   cursor: pointer;
+}
+.guide-text-toggler{
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 </style>

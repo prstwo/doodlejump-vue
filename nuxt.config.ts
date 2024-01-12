@@ -7,14 +7,14 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
-      title: 'بازی فروشگاه فارس بازار', /*it can be replaced in pages */
+      title: 'doodle jump', /*it can be replaced in pages */
       htmlAttrs: {
-        lang: "fa"
+        lang: "en"
       },
       meta: [
         { charset: 'utf-8' },
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        { hid: 'description', name: 'description', content: 'بازی فارس بازار - فروش محصولات دیجیتال' },
+        { hid: 'description', name: 'description', content: 'doodle jump game in vue' },
         { hid: 'viewport', name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' },
         { hid: 'referrer', name: 'referrer', content: 'origin' },
       ],
