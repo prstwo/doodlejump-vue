@@ -2,6 +2,43 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+## Connecting to mongoDB
+
+Make sure to install Mongosh on your system. 
+After Creating a DataBase, create a table with following schema:
+```bash
+    name: {
+      type: 'string',
+      required: true,
+    },
+    phone: {
+      type: 'string',
+      required: true,
+    },
+    score: {
+      type: 'number',
+      required: true,
+    },
+    created_date: {
+      type: 'object',
+
+      required: true,
+    },
+    updated_date: {
+      type: 'object',
+
+      required: true,
+    }
+```
+Then create a .env file in the root of your project abd type  the local address of your running mongoDb. for example 
+
+```bash
+.env file
+MONGODB_URI='mongodb://127.0.0.1:27017/doodle'
+
+```
+
+
 ## Setup
 
 Make sure to install the dependencies:
